@@ -26,10 +26,10 @@ const nbx = require('noblox.js');
 const Discord = require('discord.js');
 const InvalidArguments = new Discord.MessageEmbed()
   .setColor('#992d22')
-  .addFields({ name: '**Error**', value: 'Argument missing.' });
+  .addFields({ name: '**Error**', value: 'Missing or incorrect arguments!' });
 const InvalidPermissions = new Discord.MessageEmbed()
   .setColor('#992d22')
-  .addFields({ name: '**Error**', value: 'Access Denied.' });
+  .addFields({ name: '**Error**', value: 'Insufficent Permissions' });
 
 //--------------Edit here--------------//
 
@@ -42,8 +42,8 @@ const botStatus = process.env.botStatus;
 
 client.on('ready', () => {
   console.log('Bot online');
-  client.user.setActivity("Over Atlanta", {
-    type: "WATCHING",
+  client.user.setActivity("Madison Nuclear Generating Station | QuantOS v2", {
+    type: "PLAYING",
   });
 });
 
