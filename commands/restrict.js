@@ -17,7 +17,7 @@ module.exports = {
           Reason: reason,
           DatabaseID: dbID,
           RobloxID: userId,
-          DiscordID: message.member.user.tag,
+          DiscordID: message.member.user.id,
           Agent: 'Database',
           SystemBanned: 'true'
         });
