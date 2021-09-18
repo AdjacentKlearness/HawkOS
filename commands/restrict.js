@@ -9,7 +9,7 @@ module.exports = {
       const userId = await nbx.getIdFromUsername(suspect).catch(e => "User not found");
       if (userId !== "User not found") {
         const playerName = await nbx.getUsernameFromId(userId)
-        var ref = database.ref("Bans");
+        var ref = database.ref("api/RobloxBanned/");
         var usersRef = ref.child(userId);
         var dbID = Math.floor((Math.random() * 9999999999999999) * 1);
         usersRef.set({
