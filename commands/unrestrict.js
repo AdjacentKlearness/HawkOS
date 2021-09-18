@@ -33,7 +33,7 @@ module.exports = {
 
 
             if (isBanned !== false) {
-              var ref2 = firebase.database().ref("api/RobloxBanned/" + userId);
+              var ref2 = firebase.database().ref("api/RobloxBanned/"+userId);
               ref2.remove()
               return message.channel.send(SuccessEmbed)
             } else {
