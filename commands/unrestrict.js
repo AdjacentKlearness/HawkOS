@@ -8,7 +8,7 @@ module.exports = {
       const userId = await nbx.getIdFromUsername(suspect).catch(e => "User not found");
       if (userId !== "User not found") {
         const playerName = await nbx.getUsernameFromId(userId)
-        var ref = firebase.database().ref("api/RobloxBanned");
+        var ref = firebase.database().ref("api/RobloxBanned/");
         ref.once("value")
           .then(function (snapshot) {
             var isBanned = snapshot.child(userId).hasChildren()
