@@ -42,7 +42,7 @@ const botStatus = process.env.botStatus;
 
 client.on('ready', () => {
   console.log('Bot online');
-  client.user.setActivity("Madison Nuclear Generating Station | QuantOS v2", {
+  client.user.setActivity("With a piano", {
     type: "PLAYING",
   });
 });
