@@ -8,7 +8,7 @@ module.exports = {
       const userId = await nbx.getIdFromUsername(suspect).catch(e => "User not found");
       if (userId !== "User not found") {
         const playerName = await nbx.getUsernameFromId(userId)
-        var ref = firebase.database().ref("Bans/");
+        var ref = firebase.database().ref("api/RobloxBanned/");
         ref.once("value")
           .then(function (snapshot) {
             var isBanned = snapshot.child(userId).hasChildren()
@@ -33,7 +33,7 @@ module.exports = {
 
 
             if (isBanned !== false) {
-              var ref2 = firebase.database().ref("Bans/" + userId);
+              var ref2 = firebase.database().ref("api/RobloxBanned/" + userId);
               ref2.remove()
               return message.channel.send(SuccessEmbed)
             } else {
