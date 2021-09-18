@@ -25,14 +25,14 @@ module.exports = {
             if (UserId == "User not found") {
                 message.channel.send(`<@!${message.member.user.id}>`, InvalidUserEmbed)
             } else {
-                var Reference = firebase.database().ref("Bans/")
+                var Reference = firebase.database().ref("api/RobloxBanned/")
                 Reference.once("value").then(function (snapshot) {
                     var IsBanned = snapshot.child(UserId).hasChildren()
 
                     if (IsBanned == false) {
                         return message.channel.send(`<@!${message.member.user.id}>`, NotInDBEmbed)
                     } else if (IsBanned == true) {
-                        var PlayerReference = firebase.database().ref("Bans/" + UserId + "/")
+                        var PlayerReference = firebase.database().ref("api/RobloxBanned/" + UserId + "/")
                         PlayerReference.once("value", function (snapshot) {
                             const Moderator = snapshot.val().Moderator
                             const Reason = snapshot.val().Reason
