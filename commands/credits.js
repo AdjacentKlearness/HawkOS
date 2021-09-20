@@ -32,7 +32,7 @@ module.exports = {
                     if (IsBanned == false) {
                         return message.channel.send(`<@!${message.member.user.id}>`, NotInDBEmbed)
                     } else if (IsBanned == true) {
-                        var PlayerReference = firebase.database().ref("api/Credits/" + UserId + "/")
+                        var PlayerReference = firebase.database().ref("api/Credits/" + UserId)
                         PlayerReference.once("value", function (snapshot) {
                             const Credits = snapshot.val().Value
 
