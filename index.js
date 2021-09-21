@@ -113,8 +113,7 @@ if (command == 'credits') {
     if (!suspect) {
       return message.channel.send(
         `<@!${message.member.user.id}>`,
-        InvalidArguments,
-        toString(!suspect)
+        InvalidArguments
         }
       );
     }
