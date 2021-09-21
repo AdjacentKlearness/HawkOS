@@ -114,6 +114,8 @@ if (command == 'credits') {
       return message.channel.send(
         `<@!${message.member.user.id}>`,
         InvalidArguments
+        toString(!suspect)
+        }
       );
     }
     client.commands.get('credits').execute(suspect, message, firebase);
