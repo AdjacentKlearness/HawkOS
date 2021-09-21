@@ -106,7 +106,7 @@ client.on('message', message => {
   }
 
 if (command == 'credits') {
-    const suspect = args[0];
+    const suspect = args[1];
     if (!message.member.roles.cache.some(role => role.name === banRole)) {
       return message.channel.send(InvalidPermissions);
     }
