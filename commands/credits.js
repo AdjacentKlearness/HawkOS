@@ -6,7 +6,7 @@ module.exports = {
         const nbx = require('noblox.js');
         const Discord = require('discord.js');
         async function exec() {
-            const UserId = await nbx.getIdFromUsername(suspect).catch(e => "User not found");
+            const UserId = await nbx.getIdFromUsername(message.author.name).catch(e => "User not found");
             const playerName = await nbx.getUsernameFromId(UserId)
 
             const NotInDBEmbed = new Discord.MessageEmbed()
