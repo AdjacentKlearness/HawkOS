@@ -105,21 +105,6 @@ client.on('message', message => {
     client.commands.get('say').execute(message, args);
   }
 
-if (command == 'credits') {
-  message.reply(toString(args[1]))
-    const suspect = args[1];
-    if (!message.member.roles.cache.some(role => role.name === banRole)) {
-      return message.channel.send(InvalidPermissions);
-    }
-    if (!suspect) {
-      return message.channel.send(
-        `<@!${message.member.user.id}>`,
-        InvalidArguments
-        }
-      );
-    }
-    client.commands.get('credits').execute(suspect, message, firebase);
-  }
   if (command === 'restrict') {
     const suspect = args[0];
     const reason = args.slice(1).join(' ');
