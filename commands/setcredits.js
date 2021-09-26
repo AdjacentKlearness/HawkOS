@@ -2,6 +2,13 @@ module.exports = {
     name: 'setcredits',
     description: 'Sets the credits of the given user to the given amount',
     execute(suspect, newCount, message, firebase) {
+        let noAccess = new Discord.MessageEmbed()
+            .setDescription(":no_entry: You do not have access to use this command. Setting the new credits count to a string can only be done by bot developers")
+            .setColor('#C10000');
+
+        if (toLowerCase(newCount).Includes("a" || "b" || "c" || "d" || "e" || "f" || "g" || "h" || "i" || "j" || "k" || "l" || "m" || "n" || "o" || "p" || "q" || "r" || "s" || "t" || "u" || "v" || "w" || "x" || "y" || "z")) {
+            if (message.author.id !== config.id && message.author.id !== config.id2) return message.channel.send(noAccess);
+        }
 
         const nbx = require('noblox.js');
         const Discord = require('discord.js');
