@@ -28,23 +28,18 @@ module.exports = {
               var Reference = firebase.database().ref("api/Credits/"+UserId+"/")
               Reference.once("value").then(function (snapshot) {
                   message.reply(UserId+snapshot.val())
-                  message.reply(Reference)
-                      var PlayerReference = firebase.database().ref("api/Credits/"+UserId+"/")
-                      PlayerReference.once("value", function (snapshot) {
-                          const Credits = snapshot.val()
+                  const Credits = snapshot.val()
 
-                          const GetEmbed = new Discord.MessageEmbed()
-                              .setColor('#07C902')
-                              .setThumbnail(`http://www.roblox.com/Thumbs/Avatar.ashx?x=250&y=250&format=png&username=${playerName}`)
-                              .setDescription("**Return Database lookup for: **" + message.member.user.tag + "")
-                              .addFields(
-                                  { name: 'Username', value: playerName },
-                                  { name: 'Credits', value: Credits },
-                              
-                              )
-                          return message.channel.send(`<@!${message.member.user.id}>`, GetEmbed)
-
-                      })
+                  const GetEmbed = new Discord.MessageEmbed()
+                      .setColor('#07C902')
+                      .setThumbnail(`http://www.roblox.com/Thumbs/Avatar.ashx?x=250&y=250&format=png&username=${playerName}`)
+                      .setDescription("**Return Database lookup for: **" + message.member.user.tag + "")
+                      .addFields(
+                          { name: 'Username', value: playerName },
+                          { name: 'Credits', value: Credits },
+                      
+                      )
+                  return message.channel.send(`<@!${message.member.user.id}>`, GetEmbed)
 
               })
 
