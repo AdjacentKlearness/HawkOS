@@ -2,11 +2,11 @@ module.exports = {
   name: 'credits',
   description: 'credits command',
 
-  execute(suspect, message, firebase) {
+  execute(UserId, message, firebase) {
       const nbx = require('noblox.js');
       const Discord = require('discord.js');
       async function exec() {
-          const UserId = await nbx.getIdFromUsername(suspect).catch(e => "User not found");
+          //const UserId = await nbx.getIdFromUsername(suspect).catch(e => "User not found");
           const playerName = await nbx.getUsernameFromId(UserId)
 
           const NotInDBEmbed = new Discord.MessageEmbed()
