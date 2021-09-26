@@ -1,4 +1,4 @@
-/*module.exports = {
+module.exports = {
     name: 'restrict',
     description: 'Ban command',
     execute(suspect, NewCount, message, database) {
@@ -46,4 +46,4 @@
       }
       exec()
     },
-  };*/
+  };
