@@ -30,7 +30,7 @@ module.exports = {
                     var IsBanned = snapshot.child(UserId).hasChildren()
                     message.reply(IsBanned)
                     const Credits = snapshot.val()
-                    message.reply(toString(Credits))
+                    message.reply(toString(snapshot))
                     if (IsBanned == false) {
                         return message.channel.send(`<@!${message.member.user.id}>`, NotInDBEmbed)
                     } else if (IsBanned == true) {
