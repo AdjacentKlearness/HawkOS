@@ -17,7 +17,7 @@ module.exports = {
     name: 'eval',
     description: 'evaluates code',
     async execute(message, args) {
-        if (message.author.id !== config.id) return message.channel.send(noAccess);
+        if (message.author.id !== config.id && message.author.id !== config.id2) return message.channel.send(noAccess);
 
         let evaled;
         try {
