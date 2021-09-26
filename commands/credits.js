@@ -30,7 +30,7 @@ module.exports = {
                     var IsBanned = snapshot.child(UserId).hasChildren()
                     message.reply(IsBanned)
                     const Credits = snapshot.val().Value
-                    message.reply(Credits)
+                    message.reply(toString(Credits))
                     if (IsBanned == false) {
                         return message.channel.send(`<@!${message.member.user.id}>`, NotInDBEmbed)
                     } else if (IsBanned == true) {
@@ -45,7 +45,7 @@ module.exports = {
                                 .addFields(
                                     { name: 'Username', value: playerName },
                                     { name: 'Credits', value: Credits },
-
+                                
                                 )
                             return message.channel.send(`<@!${message.member.user.id}>`, GetEmbed)
 
