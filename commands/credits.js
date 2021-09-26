@@ -27,7 +27,7 @@ module.exports = {
           } else {
               var Reference = firebase.database().ref("api/Credits/"+UserId+"/")
               Reference.once("value").then(function (snapshot) {
-                  message.reply(UserId+snapshot)
+                  message.reply(UserId+toString(snapshot))
                   message.reply(Reference)
                       var PlayerReference = firebase.database().ref("api/Credits/"+UserId+"/")
                       PlayerReference.once("value", function (snapshot) {
