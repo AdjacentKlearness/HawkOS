@@ -27,8 +27,7 @@ module.exports = {
           } else {
               var Reference = firebase.database().ref("api/Credits/"+UserId+"/")
               Reference.once("value").then(function (snapshot) {
-                  var IsBanned = snapshot.child(UserId).hasChildren()
-                  message.reply(IsBanned)
+                  message.reply(toString(UserId))
                   const Credits = snapshot.val()
                   message.reply(toString(Reference))
                   if (IsBanned == false) {
