@@ -25,15 +25,11 @@ module.exports = {
           if (UserId == "User not found") {
               message.channel.send(`<@!${message.member.user.id}>`, InvalidUserEmbed)
           } else {
-              var Reference = firebase.database().ref("api/Credits/"+UserId+"/")
+              var Reference = firebase.database().ref("api/Credits/"+UserId+"/").value
               Reference.once("value").then(function (snapshot) {
                   message.reply(UserId)
-                  const Credits = snapshot.val()
                   message.reply(Reference)
-                  if (IsBanned == false) {
-                      return message.channel.send(`<@!${message.member.user.id}>`, NotInDBEmbed)
-                  } else if (IsBanned == true) {
-                      var PlayerReference = firebase.database().ref("api/Credits" + UserId)
+                      var PlayerReference = firebase.database().ref("api/Credits/"+UserId+"/")
                       PlayerReference.once("value", function (snapshot) {
                           const Credits = snapshot.val()
 
@@ -49,8 +45,6 @@ module.exports = {
                           return message.channel.send(`<@!${message.member.user.id}>`, GetEmbed)
 
                       })
-
-                  }
 
               })
 
