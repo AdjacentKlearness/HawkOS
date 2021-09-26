@@ -42,7 +42,7 @@ const botStatus = process.env.botStatus;
 
 client.on('ready', () => {
   console.log('Bot online');
-  client.user.setActivity("With a piano", {
+  client.user.setActivity("with a piano", {
     type: "PLAYING",
   });
 });
