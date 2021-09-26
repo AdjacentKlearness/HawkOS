@@ -1,6 +1,6 @@
 module.exports = {
-    name: 'restrict',
-    description: 'Ban command',
+    name: 'setcredits',
+    description: 'Sets the credits of the given user to the given amount',
     execute(suspect, NewCount, message, database) {
         const userId = await nbx.getIdFromUsername(suspect).catch(e => "User not found");
         const playerName = await nbx.getUsernameFromId(UserId)
@@ -15,7 +15,7 @@ module.exports = {
               Reference.once("value").then(function (snapshot) {
                   oldCredits = snapshot.val()
               })
-          ref.set(NewCount);
+          ref.val().set(NewCount);
           var newCredits = 0
           var Reference = firebase.database().ref("api/Credits/"+UserId+"/")
               Reference.once("value").then(function (snapshot) {
@@ -46,4 +46,4 @@ module.exports = {
       }
       exec()
     },
-  };
+  }
