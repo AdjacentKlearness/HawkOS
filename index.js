@@ -170,3 +170,4 @@ client.on('message', message => {
 });
 
 client.login(botToken);
+console.log("Made it past login point")
