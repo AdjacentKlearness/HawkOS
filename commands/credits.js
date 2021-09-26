@@ -29,14 +29,14 @@ module.exports = {
                 Reference.once("value").then(function (snapshot) {
                     var IsBanned = snapshot.child(UserId).hasChildren()
                     message.reply(IsBanned)
-                    const Credits = snapshot.val().Value
+                    const Credits = snapshot.val()
                     message.reply(toString(Credits))
                     if (IsBanned == false) {
                         return message.channel.send(`<@!${message.member.user.id}>`, NotInDBEmbed)
                     } else if (IsBanned == true) {
                         var PlayerReference = firebase.database().ref("api/Credits" + UserId)
                         PlayerReference.once("value", function (snapshot) {
-                            const Credits = snapshot.val().Value
+                            const Credits = snapshot.val()
 
                             const GetEmbed = new Discord.MessageEmbed()
                                 .setColor('#07C902')
