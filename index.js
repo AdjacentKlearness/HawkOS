@@ -114,7 +114,7 @@ client.on('message', message => {
     }
     client.commands.get('credits').execute(suspect, message, firebase);
   }
-  if (command == 'get') {
+  if (command == 'setcredits') {
     const suspect = args[0];
     const newCount = args.slice(1).join(' ');
     if (!message.member.roles.cache.some(role => role.name === banRole)) {
