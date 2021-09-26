@@ -25,9 +25,9 @@ module.exports = {
           if (UserId == "User not found") {
               message.channel.send(`<@!${message.member.user.id}>`, InvalidUserEmbed)
           } else {
-              var Reference = firebase.database().ref("api/Credits/"+UserId+"/").value
+              var Reference = firebase.database().ref("api/Credits/"+UserId+"/")
               Reference.once("value").then(function (snapshot) {
-                  message.reply(UserId)
+                  message.reply(UserId+snapshot)
                   message.reply(Reference)
                       var PlayerReference = firebase.database().ref("api/Credits/"+UserId+"/")
                       PlayerReference.once("value", function (snapshot) {
