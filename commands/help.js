@@ -3,7 +3,7 @@ const prefix = process.env.BotPrefix;
 
 
 let helpembed = new Discord.MessageEmbed()
-    .setTitle("nOS Help")
+    .setTitle("HawkOS Help")
     .setColor("#07C902")
     .addField("PREFIX:", process.env.BotPrefix)
     .addField(process.env.BotPrefix + "help", "Tells you some detailed information about the bot.")
