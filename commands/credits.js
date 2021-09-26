@@ -27,7 +27,6 @@ module.exports = {
           } else {
               var Reference = firebase.database().ref("api/Credits/"+UserId+"/")
               Reference.once("value").then(function (snapshot) {
-                  message.reply(UserId+snapshot.val())
                   const Credits = snapshot.val()
 
                   const GetEmbed = new Discord.MessageEmbed()
@@ -36,6 +35,7 @@ module.exports = {
                       .setDescription("**Return Database lookup for: **" + message.member.user.tag + "")
                       .addFields(
                           { name: 'Username', value: playerName },
+                          { name: 'UserId', value: UserId },
                           { name: 'Credits', value: Credits },
                       
                       )
