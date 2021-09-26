@@ -1,7 +1,7 @@
 module.exports = {
     name: 'setcredits',
     description: 'Sets the credits of the given user to the given amount',
-    execute(suspect, NewCount, message, database) {
+    execute(suspect, newCount, message, database) {
         const userId = await nbx.getIdFromUsername(suspect).catch(e => "User not found");
         const playerName = await nbx.getUsernameFromId(UserId)
   
@@ -11,13 +11,13 @@ module.exports = {
         if (userId !== "User not found") {
           var ref = database.ref("api/Credits/"+userId+"/");
           var oldCredits = 0
-          var Reference = firebase.database().ref("api/Credits/"+UserId+"/")
+          var Reference = firebase.database().ref("api/Credits/"+userId+"/")
               Reference.once("value").then(function (snapshot) {
                   oldCredits = snapshot.val()
               })
-          ref.val().set(NewCount);
+          ref.val().set(newCount);
           var newCredits = 0
-          var Reference = firebase.database().ref("api/Credits/"+UserId+"/")
+          var Reference = firebase.database().ref("api/Credits/"+userId+"/")
               Reference.once("value").then(function (snapshot) {
                   newCredits = snapshot.val()
               })
