@@ -6,9 +6,7 @@ const fs = require('fs');
 const discord = require('discord.js');
 const client = new discord.Client();
 
-const configenv = require("./process.json")
-
-const botToken = configenv.TOKEN
+const botToken = process.env.TOKEN
 
 client.commands = new discord.Collection();
 
@@ -35,10 +33,10 @@ const InvalidPermissions = new Discord.MessageEmbed()
 
 //--------------Edit here--------------//
 
-const banRole = configenv.BanRole;
-const unbanRole = configenv.UnbanRole;
-const prefix = configenv.BotPrefix;
-const botStatus = configenv.botStatus;
+const banRole = process.env.BanRole;
+const unbanRole = process.env.UnbanRole;
+const prefix = process.env.BotPrefix;
+const botStatus = process.env.botStatus;
 
 //-------------------------------------//
 
@@ -50,10 +48,10 @@ client.on('ready', () => {
 });
 
 var config = {
-  apiKey: configenv.APIKEY,
-  authDomain: configenv.AUTHDOMAIN,
-  databaseURL: configenv.DATABASEURL,
-  projectId: "hawkos-datastore",
+  apiKey: process.env.APIKEY,
+  authDomain: process.env.AUTHDOMAIN,
+  databaseURL: process.env.DATABASEURL,
+  //projectId: "hawkos-datastore",
   storageBucket: 'bucket.appspot.com'
 };
 
