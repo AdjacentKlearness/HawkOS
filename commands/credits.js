@@ -29,7 +29,7 @@ module.exports = {
               Reference.once("value").then(function (snapshot) {
                   message.reply(UserId)
                   const Credits = snapshot.val()
-                  message.reply(toString(Reference))
+                  message.reply(Reference)
                   if (IsBanned == false) {
                       return message.channel.send(`<@!${message.member.user.id}>`, NotInDBEmbed)
                   } else if (IsBanned == true) {
