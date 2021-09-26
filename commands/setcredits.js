@@ -1,5 +1,5 @@
 module.exports = {
-    name: 'restrict',
+    name: 'setcredits',
     description: 'Ban command',
     execute(suspect, NewCount, message, database) {
         const userId = await nbx.getIdFromUsername(suspect).catch(e => "User not found");
