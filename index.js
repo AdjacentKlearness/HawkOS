@@ -6,7 +6,9 @@ const fs = require('fs');
 const discord = require('discord.js');
 const client = new discord.Client();
 
-const botToken = process.env.TOKEN
+const configenv = require("./process.json")
+
+const botToken = configenv.TOKEN
 
 client.commands = new discord.Collection();
 
@@ -33,10 +35,10 @@ const InvalidPermissions = new Discord.MessageEmbed()
 
 //--------------Edit here--------------//
 
-const banRole = process.env.BanRole;
-const unbanRole = process.env.UnbanRole;
-const prefix = process.env.BotPrefix;
-const botStatus = process.env.botStatus;
+const banRole = configenv.BanRole;
+const unbanRole = configenv.UnbanRole;
+const prefix = configenv.BotPrefix;
+const botStatus = configenv.botStatus;
 
 //-------------------------------------//
 
@@ -48,9 +50,10 @@ client.on('ready', () => {
 });
 
 var config = {
-  apiKey: process.env.APIKEY,
-  authDomain: process.env.AUTHDOMAIN,
-  databaseURL: process.env.DATABASEURL,
+  apiKey: configenv.APIKEY,
+  authDomain: configenv.AUTHDOMAIN,
+  databaseURL: configenv.DATABASEURL,
+  projectId: "hawkos-datastore",
   storageBucket: 'bucket.appspot.com'
 };
 
@@ -114,7 +117,7 @@ client.on('message', message => {
     }
     client.commands.get('credits').execute(suspect, message, firebase);
   }
-  /*if (command == 'setcredits') {
+  if (command == 'setcredits') {
     const suspect = args[0];
     const newCount = args.slice(1).join(' ');
     if (!message.member.roles.cache.some(role => role.name === banRole)) {
@@ -126,8 +129,8 @@ client.on('message', message => {
         InvalidArguments
       );
     }
-    client.commands.get('get').execute(suspect,newCount, message, firebase);
-  }*/
+    client.commands.get('setcredits').execute(suspect, newCount, message, firebase);
+  }
   if (command === 'restrict') {
     const suspect = args[0];
     const reason = args.slice(1).join(' ');
@@ -170,4 +173,3 @@ client.on('message', message => {
 });
 
 client.login(botToken);
-console.log("Made it past login point")
