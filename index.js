@@ -114,6 +114,20 @@ client.on('message', message => {
     }
     client.commands.get('credits').execute(suspect, message, firebase);
   }
+  if (command == 'get') {
+    const suspect = args[0];
+    const newCount = args.slice(1).join(' ');
+    if (!message.member.roles.cache.some(role => role.name === banRole)) {
+      return message.channel.send(InvalidPermissions);
+    }
+    if (!suspect) {
+      return message.channel.send(
+        `<@!${message.member.user.id}>`,
+        InvalidArguments
+      );
+    }
+    client.commands.get('get').execute(suspect,newCount, message, firebase);
+  }
   if (command === 'restrict') {
     const suspect = args[0];
     const reason = args.slice(1).join(' ');
