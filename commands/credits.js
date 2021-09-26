@@ -19,7 +19,7 @@ module.exports = {
           const InvalidUserEmbed = new Discord.MessageEmbed()
               .setColor('#992d22')
               .addFields({
-                  name: '**Erorr**',
+                  name: '**Eorr**',
                   value: '(ccBB) Invalid User, The user does not exist.'
               })
           if (UserId == "User not found") {
@@ -27,7 +27,7 @@ module.exports = {
           } else {
               var Reference = firebase.database().ref("api/Credits/"+UserId+"/")
               Reference.once("value").then(function (snapshot) {
-                  message.reply(toString(UserId))
+                  message.reply(UserId)
                   const Credits = snapshot.val()
                   message.reply(toString(Reference))
                   if (IsBanned == false) {
