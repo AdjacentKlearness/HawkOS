@@ -1,9 +1,9 @@
-module.exports = {
-    name: 'setcredits',
+/*module.exports = {
+    name: 'restrict',
     description: 'Ban command',
-    execute(suspect, newCount, message, database) {
+    execute(suspect, NewCount, message, database) {
         const userId = await nbx.getIdFromUsername(suspect).catch(e => "User not found");
-        const playerName = await nbx.getUsernameFromId(userId)
+        const playerName = await nbx.getUsernameFromId(UserId)
   
       const nbx = require('noblox.js');
       const Discord = require('discord.js');
@@ -11,13 +11,13 @@ module.exports = {
         if (userId !== "User not found") {
           var ref = database.ref("api/Credits/"+userId+"/");
           var oldCredits = 0
-          var Reference = firebase.database().ref("api/Credits/"+userId+"/")
+          var Reference = firebase.database().ref("api/Credits/"+UserId+"/")
               Reference.once("value").then(function (snapshot) {
                   oldCredits = snapshot.val()
               })
-          ref.set(newCount);
+          ref.set(NewCount);
           var newCredits = 0
-          var Reference = firebase.database().ref("api/Credits/"+userId+"/")
+          var Reference = firebase.database().ref("api/Credits/"+UserId+"/")
               Reference.once("value").then(function (snapshot) {
                   newCredits = snapshot.val()
               })
@@ -46,4 +46,4 @@ module.exports = {
       }
       exec()
     },
-  };
+  };*/
