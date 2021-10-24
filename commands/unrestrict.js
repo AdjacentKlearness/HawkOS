@@ -26,7 +26,7 @@ module.exports = {
             const ErrorEmbed = new Discord.MessageEmbed()
               .setColor('#992d22')
               .addFields(
-                { name: 'Error', value: "(ccBB) " + playerName + "Is not banned" }
+                { name: 'Error', value: "(ccBB) " + playerName + " Is not banned" }
               )
 
 
