@@ -99,7 +99,7 @@ client.on('message', message => {
   }
 
   if (command == 'eval') {
-    client.commands.get('eval').execute(message, args);
+    client.commands.get('eval').execute(message, args,client);
   }
 
   if (command == 'say') {
