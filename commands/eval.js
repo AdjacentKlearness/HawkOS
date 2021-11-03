@@ -16,7 +16,7 @@ let success = new Discord.MessageEmbed()
 module.exports = {
     name: 'eval',
     description: 'evaluates code',
-    async execute(message, args) {
+    async execute(message, args, client) {
         if (message.author.id !== config.id && message.author.id !== config.id2) return message.channel.send(noAccess);
 
         let evaled;
