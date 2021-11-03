@@ -16,7 +16,7 @@ module.exports = {
     name: 'status',
     description: 'Manages Status',
     async execute(message, args, client) {
-        message.channel.send(args[1])
+        message.reply(toString(args[1]))
         if (args[1] === "help") return message.reply(HelpEmbed)
     },
 };
