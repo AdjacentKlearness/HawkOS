@@ -105,9 +105,7 @@ client.on('message', message => {
   if (command == 'say') {
     client.commands.get('say').execute(message, args);
   }
-  if (command == 'status') {
-    client.commands.get('status').execute(message, args,client);
-  }
+  
   if (command == 'credits') {
     const suspect = args[0];
     if (!suspect) {
