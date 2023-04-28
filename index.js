@@ -51,7 +51,7 @@ var config = {
   apiKey: process.env.APIKEY,
   authDomain: process.env.AUTHDOMAIN,
   databaseURL: process.env.DATABASEURL,
-  //projectId: "hawkos-datastore",
+  projectId: ie-group-datastore,
   storageBucket: 'bucket.appspot.com'
 };
 
